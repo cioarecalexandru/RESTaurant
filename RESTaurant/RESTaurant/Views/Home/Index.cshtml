@@ -1,18 +1,19 @@
-﻿@model IEnumerable<RESTaurant.Models.Restaurant>
+﻿@model RESTaurant.ViewModels.HomeIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>RESTaurant</title>
 </head>
 	<body>
+		<h1>@Model.MessageOfDay</h1>
 		<table>
-		@foreach (var rest in @Model)
-		{
-			<tr>
-				<td>@rest.ID</td>
-				<td>@rest.Name</td>
-			</tr>
-		}
+			@foreach (var rest in @Model.Restaurants)
+			{
+				<tr>
+					<td>@rest.ID</td>
+					<td>@rest.Name</td>
+				</tr>
+			}
 		</table>
 	</body>
 </html>
