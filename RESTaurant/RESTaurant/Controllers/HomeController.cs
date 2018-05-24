@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using RESTaurant.Models;
 
 namespace RESTaurant.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Hello from the HomeController";
+            var restaurant = new Restaurant() {ID = Guid.NewGuid(), Name = "Arkantos"};
+            return View(restaurant);
         }
     }
 }
