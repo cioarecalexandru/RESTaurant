@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RESTaurant.Interfaces.Greeting;
+using RESTaurant.Services.DataAccess;
+using RESTaurant.Services.Interfaces.DataAccess;
 
 namespace RESTaurant
 {
@@ -18,6 +20,7 @@ namespace RESTaurant
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeting, Greeting>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
             services.AddMvc();
         }
 
