@@ -27,5 +27,15 @@ namespace RESTaurant.Controllers
             };
             return View(modelView);
         }
+
+        public IActionResult Details(int index)
+        {
+            Restaurant model = _restaurantData.Get(index);
+            if (model == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+        }
     }
 }

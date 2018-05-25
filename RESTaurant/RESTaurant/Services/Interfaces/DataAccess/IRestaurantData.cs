@@ -9,5 +9,6 @@ namespace RESTaurant.Services.Interfaces.DataAccess
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetAll();
+        Restaurant Get(int index);
     }
 }

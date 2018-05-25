@@ -37,5 +37,14 @@ namespace RESTaurant.Services.DataAccess
         {
             return _restaurants.OrderBy(r => r.Name);
         }
+
+        public Restaurant Get(int index)
+        {
+            if (index > _restaurants.Count)
+            {
+                return null;
+            }
+            return _restaurants[index];
+        }
     }
 }
